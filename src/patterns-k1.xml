@@ -126,7 +126,7 @@
 
 
 	<!--záplata-->
-	<pattern pos="noun" id="interview_Z" parrent="interview">
+	<pattern pos="noun" id="interview_Z" parent="interview">
 		<!--interview_Z-->
 	   	<condition-list lemma="yes">
             <condition charno="-1" type="class" value="samohláska" />
@@ -136,7 +136,7 @@
     </pattern>
 
 
-	<pattern pos="noun" id="promile_Z" parrent="interview">
+	<pattern pos="noun" id="promile_Z" parent="interview">
 		<!--promile-->
 		<condition-list lemma="yes">
             <condition charno="-1" type="equal" value="e" />
@@ -154,7 +154,7 @@
     </pattern>
 
 
-	<pattern pos="noun" id="konkláve_Z" parrent="interview">
+	<pattern pos="noun" id="konkláve_Z" parent="interview">
 		<!--konkláve-->
 		<condition-list lemma="yes">
             <condition charno="-1" type="equal" value="e" />
