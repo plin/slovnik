@@ -1,0 +1,2095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern-list>
+<!--IMPERATIV-->
+    
+<!--ZAKONČENÍ: KONSONANT + T-->
+
+<!--LEMMA .*[SZ]T-->
+
+	<pattern pos="verb" id="IMP_nést" category="∅">
+	<!--vzor NÉST: [éáí] > e-->
+        <!--imp: -∅-->
+		<condition-list lemma="yes">
+		<!--.*[nřl][áéí][sz]t (nespisovné .*íst) > e[sz]-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s,z" />
+            <condition charno="-3" type="equal" value="á,é,í" />
+            <condition charno="-4" type="equal" value="n,ř,l" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-2" />
+            <basechange no="2" operation="append" value="e" charno="-2" />
+        </condition-list>
+        
+		<condition-list lemma="yes">
+		<!--.*v[éí]zt > ez-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="z" />
+            <condition charno="-3" type="equal" value="é,í" />
+            <condition charno="-4" type="equal" value="v" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-2" />
+            <basechange no="2" operation="append" value="e" charno="-2" />
+        </condition-list>
+        
+		<condition-list lemma="yes">
+		<!--nespisovné .*ýst > es-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="ý" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-2" />
+            <basechange no="2" operation="append" value="e" charno="-2" />
+        </condition-list>
+
+
+		<form base="2"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="2"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="2"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_pást" parent="nést" category="∅" priority="100">
+    <!--vzor PÁST: á > a-->
+        <!--imp: -∅-->
+		<condition-list lemma="yes">
+		<!--pást > pas-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="á" />
+            <condition charno="-4" type="equal" value="p" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-2" />
+            <basechange no="2" operation="append" value="a" charno="-2" />
+        </condition-list>
+
+		<form base="2"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="2"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="2"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_vést" parent="nést" category="∅">
+    <!--vzor VÉST: [éí] > e, á > a, s > ď-->
+        <!--imp: -∅-->
+        <negative-condition-list lemma="yes">
+		<!--NE u+krást (> ukradni)-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="á" />
+            <condition charno="-4" type="equal" value="r" />
+            <condition charno="-5" type="equal" value="k" />
+            <condition charno="-6" type="equal" value="u" />
+        </negative-condition-list>	
+        
+        <condition-list lemma="yes">
+    	<!--[bflmpsvzř][éí]st > eď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="é,í" />
+            <condition charno="-4" type="equal" value="b,f,l,m,p,s,v,z,ř" />
+                <!--obojetná + ř-->
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+			<basechange no="2" operation="append" value="e" />
+			<basechange no="2" operation="append" value="ď" />
+        </condition-list>
+
+		<condition-list lemma="yes">
+		<!--[rl]ást > [rl]aď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="á" />
+            <condition charno="-4" type="equal" value="r,l" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+			<basechange no="2" operation="shorten" />
+			<basechange no="2" operation="append" value="ď" />
+        </condition-list>
+
+		<condition-list lemma="yes">
+		<!--oust > uď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="u" />
+            <condition charno="-4" type="equal" value="o" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-3" />
+            <basechange no="2" operation="chop" />
+			<basechange no="2" operation="append" value="ď" />
+        </condition-list>
+
+		<form base="2"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="2"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="2"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+	<pattern pos="verb" id="IMP_mást" parent="nést" category="∅">
+	<!--vzor MÁST: é > e, í > ě, á > a, ů > o, s > ť, st > sť-->
+        <!--imp: -∅-->
+		<condition-list lemma="yes">
+		<!--ést > eť-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="é" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+			<basechange no="2" operation="append" value="e" />
+			<basechange no="2" operation="append" value="ť" />
+        </condition-list>		
+
+		<condition-list lemma="yes">
+		<!--íst > ěť-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="í" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+			<basechange no="2" operation="append" value="ě" />
+			<basechange no="2" operation="append" value="ť" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--.*ást > ať-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="á" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+			<basechange no="2" operation="append" value="a" />
+			<basechange no="2" operation="append" value="ť" />
+        </condition-list>
+
+		<condition-list lemma="yes">
+		<!--.*ůst > .*osť-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="ů" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-2" />
+			<basechange no="2" operation="append" charno="-2" value="o" />
+			<basechange no="2" operation="append" value="ť" />
+        </condition-list>
+
+		<form base="2"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="2"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="2"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_číst" category="i" priority="100">
+    <!--vzor ČÍST: í > ∅, s > t-->
+        <!--imp: -i (ěte)-->
+        <condition-list lemma="yes">
+        <!--číst > čti-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="í" />
+            <condition charno="-4" type="equal" value="č" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="chop" charno="-2"/>
+        </condition-list>
+        
+        <form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_nalézt" parent="číst" category="i" priority="100">
+    <!--vzor NALÉZT: [éí] > e, ∅/n-->
+        <!--imp: -ni-->
+        <condition-list lemma="yes">
+        <!--[éí]zt (nespisovné -ízt) > ezni-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="z" />
+            <condition charno="-3" type="equal" value="é,í" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" value="e" charno="-2"/>
+        </condition-list>
+                
+        <form base="1"><suffix>n,i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>n,ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>n,ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_ukrást" parent="číst" category="i" priority="100">
+    <!--vzor UKRÁST: á > a, s > d, ∅/n-->
+        <!--imp: -ni-->
+        <condition-list lemma="yes">
+        <!--ukrást > ukradni-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="á" />
+            <condition charno="-4" type="equal" value="r" />
+            <condition charno="-5" type="equal" value="k" />
+            <condition charno="-6" type="equal" value="u" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="d"/>
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" value="a" charno="-2"/>
+        </condition-list>
+                
+        <form base="1"><suffix>n,i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>n,ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>n,ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_hrýzt" parent="nést" category="∅" priority="100">
+    <!--vzor HRÝZT: ý > y-->
+        <!--imp: -∅-->
+		<condition-list lemma="yes">
+		<!--hrýzt > hryz-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="z" />
+            <condition charno="-3" type="equal" value="ý" />
+            <condition charno="-4" type="equal" value="r" />
+            <condition charno="-5" type="equal" value="h" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" charno="-2" />
+            <basechange no="2" operation="append" charno="-2" value="y"/>
+        </condition-list>
+
+		<form base="2"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="2"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="2"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_jíst" parent="nést" category="∅" priority="100">
+    <!--vzor JÍST: í > e, s > z-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--jíst > jez-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="í" />
+            <condition charno="-4" type="equal" value="j" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e"/>
+            <basechange no="1" operation="append" value="z"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--sníst > sněz-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="í" />
+            <condition charno="-4" type="equal" value="n" />
+            <condition charno="-5" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ě"/>
+            <basechange no="1" operation="append" value="z"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_zábst" parent="nést" category="∅" priority="100">
+    <!--vzor ZÁBST: á > e, bs > b-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--zábst > zeb-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="s" />
+            <condition charno="-3" type="equal" value="b" />
+            <condition charno="-4" type="equal" value="á" />
+            <condition charno="-5" type="equal" value="z" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" value="e" charno="-2"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*C[TI]-->
+
+    <pattern pos="verb" id="IMP_péci" category="∅">
+    <!--vzor PÉCI/PÉCT: [éí] > e, ou > u, c > č-->
+        <!--imp: -∅-->
+		<negative-condition-list lemma="yes">
+		<!--NE říc[ti]-->
+            <condition charno="-1" type="equal" value="i,t" />
+            <condition charno="-2" type="equal" value="c" />
+            <condition charno="-3" type="equal" value="í" />
+            <condition charno="-4" type="equal" value="ř" />
+        </negative-condition-list>
+        
+		<condition-list lemma="yes">
+		<!--[éí]c[ti] > eč-->
+            <condition charno="-1" type="equal" value="i,t" />
+            <condition charno="-2" type="equal" value="c" />
+            <condition charno="-3" type="equal" value="é,í" />
+            <basechange no="1" operation="chop" />
+			<basechange no="1" operation="chop" />
+			<basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e" />
+            <basechange no="1" operation="append" value="č" />
+        </condition-list>
+        
+		<condition-list lemma="yes">
+		<!--příznakové ýct > eč-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="c" />
+            <condition charno="-3" type="equal" value="ý" />
+            <basechange no="1" operation="chop" />
+			<basechange no="1" operation="chop" />
+			<basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e" />
+            <basechange no="1" operation="append" value="č" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--ouc[ti] > uč-->
+            <condition charno="-1" type="equal" value="i,t" />
+            <condition charno="-2" type="equal" value="c" />
+            <condition charno="-3" type="equal" value="u" />
+            <condition charno="-4" type="equal" value="o" />
+            <basechange no="1" operation="chop" />
+			<basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="č" />
+			<basechange no="1" operation="chop" charno="-3" />
+        </condition-list>
+
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_říci" category="i" priority="100">
+    <!--vzor ŘÍCI: í > e, c > k (c), ∅/n-->
+        <!--imp: -ni-->
+        <condition-list lemma="yes">
+            <!--říc[ti] > řekni-->
+            <condition charno="-1" type="equal" value="i,t" />
+            <condition charno="-2" type="equal" value="c" />
+            <condition charno="-3" type="equal" value="í" />
+            <condition charno="-4" type="equal" value="ř" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e"/>
+            <basechange no="1" operation="append" value="k"/>
+        </condition-list>
+        
+		<form base="1"><suffix>n,i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>n,ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>n,ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_pomoci" parent="péci" category="∅" priority="100">
+    <!--vzor POMOCI: c > z (ž)-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--.*moc[it] > moz/mož (nespis.)-->
+            <condition charno="-1" type="equal" value="i,t" />
+            <condition charno="-2" type="equal" value="c" />
+            <condition charno="-3" type="equal" value="o" />
+            <condition charno="-4" type="equal" value="m" />
+            <condition charno="-5" type="class" value="samohláska,souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="z"/>
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="chop" />
+            <basechange no="2" operation="append" value="ž"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+        <form base="2"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="2"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="2"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+<!--ZAKONČENÍ: VOKÁL-->
+
+<!--LEMMA .*AT-->
+
+    <pattern pos="verb" id="IMP_zkoumat" category="j">        
+    <!--vzor ZKOUMAT-->
+        <!--imp: -ej-->
+        <condition-list lemma="yes">
+        <!--[kh]at > [kh]ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="k,h" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[dnt]at > [dnt]ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="d,t,n" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[aeiouyáéěíóůúý][rl]at > ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="class" value="slabikotvorná" />
+            <condition charno="-4" type="class" value="samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[ht]rat > [ht]rej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="h,t" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[bmf]at > [bmf]ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="b,m,f" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[aeěiouyáéóůúýrl][vp]at > +ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="v,p" />
+            <condition charno="-4" type="class" value="samohláska, slabikotvorná" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>            
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*[szl]rat #DOPLNIT DO DP-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="l,s,z" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[^aeiouyáéěíóůúý][rl][^aeiouyáéěíóůúý]at > +ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="slabikotvorná" />
+            <condition charno="-5" type="class" value="souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+            <!--at > ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>e,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,j,t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+
+    <pattern pos="verb" id="IMP_huhňat" parent="zkoumat" category="j" priority="100">
+    <!--vzor HUHŇAT-->
+        <!--imp: -ej-->
+        <condition-list lemma="yes">
+        <!--ňat > ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="ň" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>ě,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_kupovat" category="j" priority="75">
+    <!--vzor KUPOVAT-->
+        <!--imp: -uj-->
+        <condition-list lemma="yes">
+        <!--ovat > uj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="v" />
+            <condition charno="-4" type="equal" value="o" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>u,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>u,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>u,j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_ukázat" category="∅">
+    <!--vzor UKÁZAT: á > a, í > i, k > č, s > š , r > ř, z > ž-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--[aeiouyě]([bmpv]|ch)at-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="b,ch,m,p,v" />
+            <condition charno="-4" type="class" value="krátká samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[aeiouyě]zat > ž-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="z" />
+            <condition charno="-4" type="class" value="krátká samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ž"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[aeiouyě]sat (pouze česat?) > š-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="s" />
+            <condition charno="-4" type="class" value="krátká samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="š"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--á([bmpsvz]|ch)at > a.-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="b,ch,m,p,v" />
+            <condition charno="-4" type="equal" value="á" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" charno="-2" value="a"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[áí]zat > ž-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="z" />
+            <condition charno="-4" type="equal" value="á,í" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="shorten"/>
+            <basechange no="1" operation="append" value="ž"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--plakat > plač-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="k" />
+            <condition charno="-4" type="equal" value="a" />
+            <condition charno="-5" type="equal" value="l" />
+            <condition charno="-6" type="equal" value="p" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="č"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--skákat > skač-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="k" />
+            <condition charno="-4" type="equal" value="á" />
+            <condition charno="-5" type="equal" value="k" />
+            <condition charno="-6" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="a"/>
+            <basechange no="1" operation="append" value="č"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--orat-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="o" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ř"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[aeiouyě]([bmpv]|ch)at-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="b" />
+            <condition charno="-4" type="equal" value="r" />
+            <condition charno="-5" type="equal" value="d" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_poslat" parent="kašlat" category="i" priority="100">
+    <!--vzor POSLAT: sl > šl-->
+        <!--imp: -i (ete)-->
+        <condition-list lemma="yes">
+        <!--slat-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" value="š" charno="-2"/>
+        </condition-list>
+        
+        <form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*ÁT(+AT)-->
+
+    <pattern pos="verb" id="IMP_sát" category="j">
+    <!--vzor SÁT: á > a-->
+        <!--imp: -aj-->
+        <condition-list lemma="yes">
+        <!--[hz]rát > [hz]raj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="h,z" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[klst]át > [klst]aj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="k,l,s,t" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>a,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>a,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>a,j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_přát" parent="zkoumat" category="j">
+    <!--vzor PŘÁT: á > e-->
+        <!--imp: -ej-->
+        <condition-list lemma="yes">
+        <!--.*hrát > hrej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="h" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>        
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*zrát-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="z" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*[mv]át-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="m,v" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*[bdpsž]rát-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="b,d,p,s,ž" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--át > ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>e,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,j,t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_smát" category="j">  
+    <!--vzor SMÁT: á > ě-->
+        <!--imp: -ěj-->
+        <condition-list lemma="yes">
+        <!--.*[mv]át > [mv]+ěj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="m,v" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--nadát > naděj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="d" />
+            <condition charno="-4" type="equal" value="a" />
+            <condition charno="-5" type="equal" value="n" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>ě,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,j,t,e</suffix><tag>k5mRp2nP</tag></form>  
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_bát" category="j">
+    <!--vzor BÁT: á > o-->
+        <!--imp: -oj-->
+        <condition-list lemma="yes">
+        <!--bát > boj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="b" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>o,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>o,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>o,j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_stát" category="∅">
+    <!--vzor STÁT: á > ů-->
+        <!--imp: -ůj-->
+        <condition-list lemma="yes">
+        <!--stát > stůj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="t" />
+            <condition charno="-4" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>ů,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ů,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ů,j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_brát" parent="ukázat" category="∅">
+    <!--vzor BRÁT: ∅ > e-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--[bdpsž]r[áa]t > [bdpsž]er-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a,á" />
+            <condition charno="-3" type="equal" value="r" />
+            <condition charno="-4" type="equal" value="b,d,p,s,ž" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e" charno="-2"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--stl[aá]t > stel-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á,a" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="t" />
+            <condition charno="-5" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e" charno="-2"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_psát" parent="ukázat" category="∅" priority="100">
+    <!--vzor PSÁT: ∅ > i, s > š-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--ps[áa]t > piš-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á,a" />
+            <condition charno="-3" type="equal" value="s" />
+            <condition charno="-4" type="equal" value="p" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="i"/>
+            <basechange no="1" operation="append" value="š"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_vstát" parent="ukázat" category="∅" priority="90">
+    <!--vzor VSTÁT: á > a-->
+        <!--imp: -ň-->
+        <condition-list lemma="yes">
+        <!--st[aá]t > staň-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á,a" />
+            <condition charno="-3" type="equal" value="t" />
+            <condition charno="-4" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="a"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--plát > plaň-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="p" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="a"/>
+        </condition-list>
+        
+		<form base="1"><suffix>ň</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ň,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ň,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_hnát" parent="ukázat" category="∅" priority="100">
+    <!--vzor HNÁT: á > e, h > ž-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--hn[áa]t > žeň-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á,a" />
+            <condition charno="-3" type="equal" value="n" />
+            <condition charno="-4" type="equal" value="h" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ž"/>
+            <basechange no="1" operation="append" value="e"/>
+        </condition-list>
+        
+		<form base="1"><suffix>ň</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ň,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ň,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_řvát" category="i">
+    <!--vzor ŘVÁT-->
+        <!--imp: -i (ěte)-->        
+        <condition-list lemma="yes">
+        <!--K[pv]át > K[pv]i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a,á" />
+            <condition charno="-3" type="equal" value="v,p" />
+            <condition charno="-4" type="class" value="souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+	<pattern pos="noun" id="IMP_zvát_Z" parent="řvát" category="i" priority="100">
+	    <!--záplata ZVÁT (řvát)-->
+		<condition-list lemma="yes">
+		<!--zv[aá]t > zvi-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á,a" />
+            <condition charno="-3" type="equal" value="v" />
+            <condition charno="-4" type="equal" value="z" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+
+		<form base="1"><suffix>e,m,e</suffix><tag>+k5mRp1nP</tag></form>
+		<form base="1"><suffix>e,t,e</suffix><tag>+k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_kašlat" category="i" priority="90">
+    <!--vzor KAŠLAT-->
+        <!--imp: -i (ete)-->
+        <negative-condition-list lemma="yes">
+        <!--NE tvrdá+[aá]t-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a,á" />
+            <condition charno="-3" type="class" value="tvrdá souhláska" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*[bfmpv][aá]t (zakazuje i "zvát" > proto má vlastní vzor/záplatu)-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a,á" />
+            <condition charno="-3" type="class" value="retná souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--.*KKat > KKi-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a,á" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_lhát" parent="kašlat" category="i" priority="100">
+    <!--vzor LHÁT: h > ž-->
+        <!--imp: -i (ete)-->
+        <condition-list lemma="yes">
+        <!--lh[aá]t > lži-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á,a" />
+            <condition charno="-3" type="equal" value="h" />
+            <condition charno="-4" type="equal" value="l" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ž"/>
+        </condition-list>
+        
+        <form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_ustát" category="j" priority="100">
+    <!--vzor USTÁT: á > o-->
+        <!--imp: -oj-->
+        <condition-list lemma="yes">
+        <!--ustát > ustoj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="á" />
+            <condition charno="-3" type="equal" value="t" />
+            <condition charno="-4" type="equal" value="s" />
+            <condition charno="-5" type="equal" value="u" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>o,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>o,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>o,j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_chcát" category="j" priority="100">
+    <!--vzor CHCÁT: c > č-->
+        <!--imp: -ij-->
+        <condition-list lemma="yes">
+        <!--chc[aá]t > chčij-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="a,á" />
+            <condition charno="-3" type="equal" value="c" />
+            <condition charno="-4" type="equal" value="ch" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="č"/>
+        </condition-list>
+        
+        <form base="1"><suffix>i,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>i,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>i,t,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*ET-->
+
+    <pattern pos="verb" id="IMP_zkoušet" category="j">        
+    <!--vzor ZKOUŠET-->
+        <!--imp: -ej-->
+        <condition-list lemma="yes">
+        <!--Vjet > Vjej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="j" />
+            <condition charno="-4" type="class" value="samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[áéíóúůý][žščřcj]et > [áéíóúůý][žščřcj]ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--mýšlet > mýšlej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="š" />
+            <condition charno="-5" type="equal" value="ý" />
+            <condition charno="-6" type="equal" value="m" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--mejšlet > mejšlej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="š" />
+            <condition charno="-5" type="equal" value="j" />
+            <condition charno="-6" type="equal" value="e" />
+            <condition charno="-7" type="equal" value="m" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--et > ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>e,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,j,t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+
+    <pattern pos="verb" id="IMP_jet" parent="běžet" category="∅">
+    <!--vzor JET: t > ď-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--jet > jeď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="j" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ď"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+   
+    <pattern pos="verb" id="IMP_běžet" category="∅">
+    <!--vzor BĚŽET: í > i-->
+        <!--imp: -∅-->
+        <negative-condition-list lemma="yes">
+        <!--NE ou[^áéíóúůý]et-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="equal" value="u" />
+            <condition charno="-5" type="equal" value="o" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE mýšlet-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="š" />
+            <condition charno="-5" type="equal" value="ý" />
+            <condition charno="-6" type="equal" value="m" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE mejšlet-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="š" />
+            <condition charno="-5" type="equal" value="j" />
+            <condition charno="-6" type="equal" value="e" />
+            <condition charno="-7" type="equal" value="m" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--ílet > il (šílet, kvílet)-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />
+            <condition charno="-4" type="equal" value="í" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" value="i" charno="-2"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[rl]Ket > [rl]-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="equal" value="r,l" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[aeěiouy]Ket > [aeěiouy]K-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="krátká samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+     
+    <pattern pos="verb" id="IMP_řinčet" category="i">
+    <!--vzor ŘINČET-->
+        <!--imp: -i (ete)-->
+        <negative-condition-list lemma="yes">
+        <!--NE .*jet-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="j" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*mýšlet-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />            
+            <condition charno="-4" type="equal" value="š" />            
+            <condition charno="-5" type="equal" value="ý" />            
+            <condition charno="-6" type="equal" value="m" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE .*mejšlet-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="equal" value="l" />            
+            <condition charno="-4" type="equal" value="š" />            
+            <condition charno="-5" type="equal" value="j" />            
+            <condition charno="-6" type="equal" value="e" />            
+            <condition charno="-7" type="equal" value="m" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[^aeiouyáéěíóůúý][^aeiouyáéěíóůúýrl][^aeiouyáéěíóůúý]et > +i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="equal" value="b,c,č,d,ď,f,g,h,ch,j,k,m,n,p,q,ř,s,š,t,ť,v,w,x,z,ž" />
+            <condition charno="-5" type="class" value="souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--VKKet: .*[aeiouyáéěíóůúý][^aeiouyáéěíóůúý][^aeiouyáéěíóůúý]et > +i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="e" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="souhláska" />
+            <condition charno="-5" type="class" value="samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop"/>
+        </condition-list>
+                
+        <form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*ĚT-->
+
+    <pattern pos="verb" id="IMP_spět" category="j">
+    <!--vzor SPĚT-->
+        <!--imp: -ěj-->
+        <condition-list lemma="yes">
+        <!--ět > ěj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě"/>
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>j,t,e</suffix><tag>k5mRp2nP</tag></form>  
+    </pattern>
+
+    <pattern pos="verb" id="IMP_trpět" category="∅">
+    <!--vzor TRPĚT: d > ď-->   
+        <!--imp: -∅-->
+        
+        <negative-condition-list lemma="yes">
+        <!--NE [áéíóůúý][^aieouyěáéíóůúý]ět-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě"/>
+            <condition charno="-3" type="class" value="souhláska"/>
+            <condition charno="-4" type="class" value="dlouhá samohláska"/>
+        </negative-condition-list>
+        <condition-list lemma="yes">
+        
+        <condition-list lemma="yes">
+        <!--[aieouyěrl][^aieouyěáéíóůúý]ět > [aieouyěrl][^aieouyěáéíóůúý]-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě"/>
+            <condition charno="-3" type="class" value="souhláska"/>
+            <condition charno="-4" type="class" value="krátká samohláska,slabikotvorná"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        <!--ět > ˇ-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="softenA" />
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>  
+    </pattern>
+
+    <pattern pos="verb" id="IMP_pištět" category="i">
+    <!--vzor PIŠTĚT-->
+        <!--imp: -i (ěte)-->
+        <condition-list lemma="yes">
+        <!--[^aieouyěáéíóůúý][^aieouyěáéíóůúý]ět > KKi-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě"/>
+            <condition charno="-3" type="class" value="souhláska"/>
+            <condition charno="-4" type="class" value="souhláska"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>  
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_vědět" parent="trpět" category="∅" priority="75">
+    <!--vzor VĚDĚT: d > z-->
+        <!--imp: -∅-->
+       <condition-list lemma="yes">
+        <!--v[ěi]dět > v[ěi]z-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě"/>
+            <condition charno="-3" type="equal" value="d"/>
+            <condition charno="-4" type="equal" value="ě,i"/>
+            <condition charno="-5" type="equal" value="v"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="z"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+
+    <pattern pos="verb" id="IMP_opomnět" parent="trpět" category="∅" priority="100">
+    <!--vzor OPOMNĚT: ∅ > e, ∅ > ň-->  
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--mnout > meň-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ě" />
+            <condition charno="-3" type="equal" value="n" />
+            <condition charno="-4" type="equal" value="m" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e"/>
+        </condition-list>
+        
+		<form base="1"><suffix>ň</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ň,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ň,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+<!--LEMMA .*IT-->
+
+    <pattern pos="verb" id="IMP_prosit" category="∅">
+    <!--vzor PROSIT: krácení vokálů, měkčení d/t/n > ď/ť/ň-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--ou.it > uˇ-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-4" type="equal" value="u" />
+            <condition charno="-5" type="equal" value="o" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-3"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--(V[rl]).it > (V[rl])ˇ-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="samohláska,slabikotvorná" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+            <basechange no="1" operation="shorten" charno="-2"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--[sš]tit > [sš]ť-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="t" />
+            <condition charno="-4" type="equal" value="s,š" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--křivdit > křivď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="d" />
+            <condition charno="-4" type="equal" value="v" />
+            <condition charno="-4" type="equal" value="i" />
+            <condition charno="-4" type="equal" value="ř" />
+            <condition charno="-4" type="equal" value="k" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+            <basechange no="1" operation="shorten" charno="-2"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--chtit > chť-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="t" />
+            <condition charno="-4" type="equal" value="ch" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--jit > j-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="j" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--it > ∅-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+            <basechange no="1" operation="shorten" charno="-2"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_kazit_Z" pattern="prosit" category="∅">
+    <!--záplata KAZIT_Z (prosit): krácení vokálů, měkčení s/z > š/ž-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--sit >š-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="s" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="append" value="š"/>
+            <basechange no="1" operation="shorten" charno="-2"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--zit > ž-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="z" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="append" value="ž"/>
+            <basechange no="1" operation="shorten" charno="-2"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>+k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>+k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>+k5mRp2nP</tag></form>
+    </pattern>
+
+	<pattern pos="noun" id="IMP_zanítit_Z" parent="prosit" category="∅">
+	<!--záplata ZANÍTIT (prosit): í > ě, t > ť-->
+		<condition-list lemma="yes">
+		<!--nítit > něť-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="t" />
+            <condition charno="-4" type="equal" value="í" />
+            <condition charno="-5" type="equal" value="n" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" charno="-2" value="ě"/>
+        </condition-list>
+        
+		<condition-list lemma="yes">
+		<!--spíšit > štěp-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="p" />
+            <condition charno="-4" type="equal" value="í" />
+            <condition charno="-5" type="equal" value="t" />
+            <condition charno="-6" type="equal" value="š" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="softenA" charno="-1"/>
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" charno="-2" value="ě"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>+k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>+k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>+k5mRp2nP</tag></form>
+    </pattern>
+
+	<pattern pos="noun" id="IMP_učit_Z" parent="prosit" category="∅" priority="75">
+	<!--záplata UČIT (prosit)-->
+		<condition-list lemma="yes">
+		<!--[dp]oučit > [dp]ouč-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="č" />
+            <condition charno="-4" type="equal" value="u" />
+            <condition charno="-5" type="equal" value="o" />
+            <condition charno="-6" type="equal" value="d,p" />
+            <basechange no="1" operation="chop"/>
+            <basechange no="1" operation="chop"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>+k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>+k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>+k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_zjistit" category="i">
+    <!--vzor ZJISTIT-->
+        <!--imp: -i (ěte)-->
+       <condition-list lemma="yes">
+       <!--[dntbmpv]it > [dntbmpv]i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="d,n,t,b,m,p,v" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_určit" category="i">
+    <!--vzor URČIT-->
+        <!--imp: -i (ete)-->
+        <!--pozn.: doklady o "-[cčlřsšž]it"-->
+        <negative-condition-list lemma="yes">
+            <!--NE [dntbmpv]it-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="d,n,t,b,m,p,v" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+            <!--[^aieouyěáéíóůúý][^aieouyěáéíóůúý]it > KKi-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+            <!--[aéíóůý][^aieouyěáéíóůúý]it > [aéíóůý]Ki-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="class" value="dlouhá samohláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+        <condition-list lemma="yes">
+            <!--.*ou[^aieouyěáéíóůúý]it > ouKi-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="class" value="souhláska" />
+            <condition charno="-4" type="equal" value="u" />
+            <condition charno="-5" type="equal" value="o" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_pospíšit" parent="prosit" category="∅" priority="100">
+    <!--vzor POSPÍŠIT: í > ě-->
+        <!--imp: -∅ (te)-->
+        <condition-list lemma="yes">
+        <!--spíšit > spěš-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="i" />
+            <condition charno="-3" type="equal" value="š" />
+            <condition charno="-4" type="equal" value="í" />
+            <condition charno="-5" type="equal" value="p" />
+            <condition charno="-6" type="equal" value="s" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+            <basechange no="1" operation="append" charno="-2" value="ě"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*ÍT-->
+
+    <pattern pos="verb" id="IMP_chtít" category="j">
+    <!--vzor CHTÍT: í > ě-->
+        <!--imp: -ěj-->
+       <condition-list lemma="yes">
+        <!--[bdmnptv]ít > [bdmnptv]ěj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í"/>
+            <condition charno="-3" type="class" value="měkčící"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>ě,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,j,t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+
+    <pattern pos="verb" id="IMP_zabít" category="∅" priority="90">
+    <!--vzor ZABÍT-->
+        <!--imp: -∅-->
+       <condition-list lemma="yes">
+       <!--zabít > zab-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í"/>
+            <condition charno="-3" type="equal" value="b"/>
+            <condition charno="-4" type="equal" value="a"/>
+            <condition charno="-5" type="equal" value="z"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_sít" category="j">
+    <!--vzor SÍT: í > e-->
+        <!--imp: -ej-->
+        <negative-condition-list lemma="yes">
+        <!--NE [bdmnptv]ít-->
+            <condition charno="-3" type="class" value="měkčící"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </negative-condition-list>
+        
+       <condition-list lemma="yes">
+        <!--ít > ej-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í"/>
+            <condition charno="-3" type="class" value="souhláska"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>e,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,j,t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+
+    <pattern pos="verb" id="IMP_žít" category="j">
+    <!--vzor ŽÍT-->
+        <!--imp: -ij-->
+       <condition-list lemma="yes">
+        <!--ít > ij-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i,j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>i,j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>i,j,t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+
+    <pattern pos="verb" id="IMP_mlít" category="∅">
+    <!--vzor MLÍT: í > e-->
+        <!--imp: -∅-->
+       <condition-list lemma="yes">
+        <!--ml[íe]t > mel-->
+            <condition charno="-1" type="equal" value="t"/>
+            <condition charno="-2" type="equal" value="í,e"/>
+            <condition charno="-3" type="equal" value="l"/>
+            <condition charno="-4" type="equal" value="m"/>
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" charno="-2" value="e"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>        
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_jít" category="∅" priority="90">
+    <!--vzor JÍT: í > ∅, ∅ > ď-->
+        <!--imp: po- + -∅-->        
+        <negative-condition-list lemma="yes">
+        <!--ne .*jít-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="equal" value="j" />
+            <condition charno="-4" type="class" value="samohláska,souhláska" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--jít > po+jď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="equal" value="j" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ď"/>
+        </condition-list>
+
+            <!--nefunguje prefix!!!-->        
+        <form base="1"><preffix>p,o</preffix><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><preffix>p,o</preffix><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><preffix>p,o</preffix><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_přijít" category="∅" priority="100">
+    <!--vzor PŘIJÍT: í > ∅, ∅ > ď-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--přijít > přijď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="equal" value="j" />
+            <condition charno="-4" type="equal" value="i" />
+            <condition charno="-5" type="equal" value="ř" />
+            <condition charno="-6" type="equal" value="p" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="ď"/>
+        </condition-list>
+        
+        <form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_sejít" category="i" priority="90">
+    <!--vzor SEJÍT: í > ∅, ∅ > d-->
+        <!--imp: -i (ěte)-->
+        <condition-list lemma="yes">
+        <!--jít > jdi-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="equal" value="j" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="d"/>
+        </condition-list>
+        
+        <form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_třít" category="i">
+    <!--vzor TŘÍT-->
+        <!--imp: -i (ete)-->
+       <condition-list lemma="yes">
+       <!--.*ít > i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>e,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>e,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_ctít" category="i">
+    <!--vzor CTÍT-->
+        <!--imp: -i (ěte)-->
+       <condition-list lemma="yes">
+       <!--[bdmnptv]ít > [bdmnptv]i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="class" value="měkčící" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_začít" parent="ctít" category="i">
+    <!--vzor ZAČÍT: ∅ > n-->
+        <!--imp: -ni-->
+       <condition-list lemma="yes">
+       <!--.*ít-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>n,i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>n,ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>n,ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_převzít" parent="ctít" category="i" priority="90">
+    <!--vzor PŘEVZÍT: ∅ > e, ∅ > m-->  
+    <!--imp: -i (ěte)-->      
+        <condition-list lemma="yes">
+        <!--.převzít-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="equal" value="z" />
+            <condition charno="-4" type="equal" value="v" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e" charno="-2"/>
+        </condition-list>
+        
+        <!--imp: -mi-->
+		<form base="1"><suffix>m,i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>m,ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_vzít" parent="nést" category="∅" priority="100">
+    <!--vzor VZÍT: ∅ > e, ∅ > m-->
+        <!--imp: -∅-->
+        <negative-condition-list lemma="yes">
+        <!--.převzít-->
+            <condition charno="-5" type="class" value="souhláska,samohláska" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--příznakové vzít > vem-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="í" />
+            <condition charno="-3" type="equal" value="z" />
+            <condition charno="-4" type="equal" value="v" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="e"/>
+        </condition-list>
+        
+		<form base="1"><suffix>m</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>m,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*OUT-->
+
+    <pattern pos="verb" id="IMP_tisknout" category="i">
+    <!--vzor TISKNOUT-->
+        <!--imp: -i (ěte)-->
+        <condition-list lemma="yes">
+        <!--.*K+[nm]out > K[mn]i-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="u" />
+            <condition charno="-3" type="equal" value="o" />
+            <condition charno="-4" type="equal" value="n,m" />
+            <condition charno="-5" type="class" value="souhláska" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>i</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ě,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ě,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_zapomenout" category="∅" priority="75">
+    <!--vzor ZAPOMENOUT: n > ň-->  
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--[Vrl]nout > [Vrl]e-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="u" />
+            <condition charno="-3" type="equal" value="o" />
+            <condition charno="-4" type="equal" value="n" />
+            <condition charno="-5" type="class" value="samohláska,slabikotvorná" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+        </condition-list>
+        
+		<form base="1"><suffix>ň</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>ň,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>ň,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+
+    <pattern pos="verb" id="IMP_pomátnout" category="∅" priority="90">
+    <!--vzor POMÁTNOUT: á > a, t > ť-->  
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--mátnout > mať-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="u" />
+            <condition charno="-3" type="equal" value="o" />
+            <condition charno="-4" type="equal" value="n" />
+            <condition charno="-5" type="equal" value="t" />
+            <condition charno="-6" type="equal" value="á" />
+            <condition charno="-7" type="equal" value="m" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="softenA" charno="-1"/>
+            <basechange no="1" operation="shorten" charno="-2"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    <pattern pos="verb" id="IMP_plout" category="j">
+    <!--vzor PLOUT: ou > u-->  
+        <!--imp: -uj-->
+        <negative-condition-list lemma="yes">
+        <!--NE -nout-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="u" />
+            <condition charno="-3" type="equal" value="o" />
+            <condition charno="-4" type="equal" value="n" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--out > uj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="u" />
+            <condition charno="-3" type="equal" value="o" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" charno="-2"/>
+        </condition-list>
+        
+		<form base="1"><suffix>j</suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>j,m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>j,t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--LEMMA .*ÝT-->
+    <pattern pos="verb" id="IMP_krýt" category="j" priority="75">
+    <!--vzor KRÝT: ý > y-->
+        <!--imp: -yj-->
+                
+        <negative-condition-list lemma="yes">
+        <!--NE být-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ý" />
+            <condition charno="-3" type="equal" value="b" />
+        </negative-condition-list>
+        
+        <negative-condition-list lemma="yes">
+        <!--NE bejt-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="j" />
+            <condition charno="-3" type="equal" value="e" />
+            <condition charno="-4" type="equal" value="b" />
+        </negative-condition-list>
+        
+        <condition-list lemma="yes">
+        <!--příznakové .*ejt > yj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ý" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="y"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--příznakové .*ejt > (příznakové) yj-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="j" />
+            <condition charno="-3" type="equal" value="e" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="y"/>
+        </condition-list>
+        
+		<form base="1"><suffix>j</suffix><tag>k5mRp2nS-a</tag></form>
+ 		<form base="1"><suffix>j,m,e</suffix><tag>k5mRp1nP-a</tag></form>
+        <form base="1"><suffix>j,t,e</suffix><tag>k5mRp2nP-a</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="IMP_být" category="∅" priority="100">
+    <!--vzor BÝT-->
+        <!--imp: -∅-->
+        <condition-list lemma="yes">
+        <!--být > buď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="ý" />
+            <condition charno="-3" type="equal" value="b" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="u"/>
+            <basechange no="1" operation="append" value="ď"/>
+        </condition-list>
+        
+        <condition-list lemma="yes">
+        <!--příznakové bejt > buď-->
+            <condition charno="-1" type="equal" value="t" />
+            <condition charno="-2" type="equal" value="j" />
+            <condition charno="-3" type="equal" value="e" />
+            <condition charno="-4" type="equal" value="b" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="chop" />
+            <basechange no="1" operation="append" value="u"/>
+            <basechange no="1" operation="append" value="ď"/>
+        </condition-list>
+        
+		<form base="1"><suffix></suffix><tag>k5mRp2nS</tag></form>
+ 		<form base="1"><suffix>m,e</suffix><tag>k5mRp1nP</tag></form>
+        <form base="1"><suffix>t,e</suffix><tag>k5mRp2nP</tag></form>
+    </pattern>
+    
+<!--#pomocné vzory-->    
+    <pattern pos="verb" id="#NO_LEMMA_IMP">
+		<condition-list lemma="yes">
+            <condition charno="-1" type="class" value="samohláska,souhláska" />
+        </condition-list>
+
+ 		<form base="1" lemma="yes"><suffix></suffix><tag>kx</tag></form>
+    </pattern>
+    
+    <pattern pos="verb" id="#NO_PATTERN_IMP">
+		<condition-list lemma="yes">
+            <condition charno="-1" type="class" value="samohláska,souhláska" />
+        </condition-list>
+
+ 		<form base="1" lemma="yes"><suffix></suffix><tag>kx</tag></form>
+    </pattern>
+
+</pattern-list>
